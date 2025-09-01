@@ -1,0 +1,56 @@
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs/Editors ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+.vs/
+
+# --- .NET build outputs ---
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+TestResults/
+*.nupkg
+*.snupkg
+*.localhistory
+
+# --- Coverage / analysis ---
+coverage/
+*.coverage
+*.coveragexml
+
+# --- NuGet ---
+*.nupkg
+*.nuget.props
+*.nuget.targets
+.nuget/packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# --- ASP.NET Core ---
+wwwroot/
+*.db
+appsettings.*.local.json
+secrets.json
+
+# --- Resharper / Rider ---
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# --- Misc ---
+*.swp
+*.swo
+
+# --- Node (if you add tooling) ---
+node_modules/
