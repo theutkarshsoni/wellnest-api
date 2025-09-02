@@ -1,13 +1,15 @@
+using WellNest.Api.Endpoints;
+using WellNest.Api.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSingleton<IHabitRepository, InMemoryHabitRepository>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -19,5 +21,7 @@ if (app.Environment.IsDevelopment())
 app.MapGet("/healthcheck", () =>
     Results.Ok(new { status = "ok", service = "WellNest.Api" })
 );
+
+app.MapHabitEndpoints();
 
 app.Run();
